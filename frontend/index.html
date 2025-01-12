@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <script>
+      function showInitData() {
+        const initData = window.Telegram.WebApp.initData;
+        const userData = window.Telegram.WebApp.initDataUnsafe.user;
+
+        document.getElementById("initDataOutput").innerText =
+          "InitData: " + initData;
+        document.getElementById("userDataOutput").innerText =
+          "User Data: " + JSON.stringify(userData, null, 2);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="showInitData()">Показать данные</button>
+    <pre id="initDataOutput"></pre>
+    <pre id="userDataOutput"></pre>
+  </body>
+</html>
